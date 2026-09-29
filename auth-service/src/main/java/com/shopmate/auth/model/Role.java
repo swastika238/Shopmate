@@ -1,4 +1,6 @@
 package com.shopmate.auth.model;
 
-public class Role {
+public enum Role {
+    CUSTOMER,
+    ADMIN
 }
