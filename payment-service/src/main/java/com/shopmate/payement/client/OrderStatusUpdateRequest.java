@@ -1,4 +1,4 @@
 package com.shopmate.payement.client;
 
-public class OrderStatusUpdateRequest {
+public record OrderStatusUpdateRequest(String status){
 }
