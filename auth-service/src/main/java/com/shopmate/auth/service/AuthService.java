@@ -77,6 +77,12 @@ public class AuthService {
         return buildAuthResponse(user);
     }
 
+    public UserResponse getUserById(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new ApiException(HttpStatus.NOT_FOUND, "User not found"));
+        return UserResponse.from(user);
+    }
+
     private AuthResponse buildAuthResponse(User user) {
         String accessToken = jwtService.generateAccessToken(user.getEmail(), user.getId(), user.getRole().name());
         String refreshToken = jwtService.generateRefreshToken(user.getEmail());
