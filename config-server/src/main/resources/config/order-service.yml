@@ -1,0 +1,24 @@
+server:
+  port: 8084
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shopmate_order
+    username: postgres
+    password: YourNewPassword123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+product-service:
+  url: ${PRODUCT_SERVICE_URL:http://localhost:8082}
+
+notification-service:
+  url: ${NOTIFICATION_SERVICE_URL:http://localhost:8086}
+
+internal:
+  api-key: ${INTERNAL_API_KEY:shopmate-internal-secret-key}
