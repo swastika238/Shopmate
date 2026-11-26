@@ -1,0 +1,14 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: chatbot-service
+  config:
+    import: optional:configserver:http://localhost:8888
+
+product-service:
+  url: ${PRODUCT_SERVICE_URL:http://localhost:8082}
+
+order-service:
+  url: ${ORDER_SERVICE_URL:http://localhost:8084}
