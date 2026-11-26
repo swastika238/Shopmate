@@ -17,4 +17,9 @@ public class ProductClientFallback implements ProductClient {
     public void reduceStock(Long id, int quantity) {
         throw new IllegalStateException("Product service is currently unavailable");
     }
+
+    @Override
+    public void restoreStock(Long id, int quantity) {
+        throw new IllegalStateException("Product service is currently unavailable");
+    }
 }
